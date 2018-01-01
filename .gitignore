@@ -1,0 +1,5 @@
+#ignore /cocos2d
+cocos2d/
+proj.android/
+Debug.win32/
+.vs/
