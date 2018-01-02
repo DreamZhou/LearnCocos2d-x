@@ -3,3 +3,5 @@ cocos2d/
 proj.android/
 Debug.win32/
 .vs/
+*.db
+*.opendb
