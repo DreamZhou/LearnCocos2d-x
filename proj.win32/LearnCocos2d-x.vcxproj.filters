@@ -33,6 +33,18 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\3rdparty\fmt\fmt\format.cc">
+      <Filter>3rdparty\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\fmt\fmt\ostream.cc">
+      <Filter>3rdparty\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\fmt\fmt\posix.cc">
+      <Filter>3rdparty\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\fmt\fmt\printf.cc">
+      <Filter>3rdparty\fmt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -46,6 +58,27 @@
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\fmt\fmt\container.h">
+      <Filter>3rdparty\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\fmt\fmt\format.h">
+      <Filter>3rdparty\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\fmt\fmt\ostream.h">
+      <Filter>3rdparty\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\fmt\fmt\posix.h">
+      <Filter>3rdparty\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\fmt\fmt\printf.h">
+      <Filter>3rdparty\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\fmt\fmt\string.h">
+      <Filter>3rdparty\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\fmt\fmt\time.h">
+      <Filter>3rdparty\fmt</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

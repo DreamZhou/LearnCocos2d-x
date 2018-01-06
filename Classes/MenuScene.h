@@ -7,16 +7,16 @@ class MenuScene : public cocos2d::Scene
 {
 public:
     static cocos2d::Scene* createScene();
+    // implement the "static create()" method manually
+    CREATE_FUNC(MenuScene);
 
     virtual bool init();
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
-
 	void menuChangeSceneCallback(Ref * pSender);
     
-    // implement the "static create()" method manually
-    CREATE_FUNC(MenuScene);
+
 };
 
 #endif // __MENU_SCENE_H__

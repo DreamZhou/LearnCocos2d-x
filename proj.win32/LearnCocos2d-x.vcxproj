@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -149,12 +149,23 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\3rdparty\fmt\fmt\format.cc" />
+    <ClCompile Include="..\3rdparty\fmt\fmt\ostream.cc" />
+    <ClCompile Include="..\3rdparty\fmt\fmt\posix.cc" />
+    <ClCompile Include="..\3rdparty\fmt\fmt\printf.cc" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\MenuScene.cpp" />
     <ClCompile Include="..\Classes\Scenes\SpriteTestScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\3rdparty\fmt\fmt\container.h" />
+    <ClInclude Include="..\3rdparty\fmt\fmt\format.h" />
+    <ClInclude Include="..\3rdparty\fmt\fmt\ostream.h" />
+    <ClInclude Include="..\3rdparty\fmt\fmt\posix.h" />
+    <ClInclude Include="..\3rdparty\fmt\fmt\printf.h" />
+    <ClInclude Include="..\3rdparty\fmt\fmt\string.h" />
+    <ClInclude Include="..\3rdparty\fmt\fmt\time.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\MenuScene.h" />
     <ClInclude Include="..\Classes\Scenes\SpriteTestScene.h" />
