@@ -1,8 +1,22 @@
+#include <tuple>
+#include <vector>
 #include "MenuScene.h"
 #include "Classes/Scenes/SpriteTestScene.h"
-#include "SimpleAudioEngine.h"
+#include "Classes/Scenes/LostRoutes/LostRoutesLoading.h"
 
 USING_NS_CC;
+
+std::vector<std::tuple<std::string, std::function<cocos2d::Scene*()>>>
+testCases{
+    {"SpriteTest",SpriteTest::createScene },
+    {"LostRoutesLoading", LostRoutesLoading::createScene },
+};
+
+const size_t sceneName = 0;
+const size_t sceneCreatFun = 1;
+const std::string fontFile = "fonts/Marker Felt.ttf";
+const float       fontSize = 30.f;
+
 
 Scene* MenuScene::createScene()
 {
@@ -51,15 +65,23 @@ bool MenuScene::init()
         float y = origin.y + closeItem->getContentSize().height/2;
         closeItem->setPosition(Vec2(x,y));
     }
-	//SpriteTest 场景
-	auto spriteTest = Label::createWithTTF("SpriteTest", "fonts/Marker Felt.ttf", 30);
-	auto spriteTestItem = MenuItemLabel::create(spriteTest, 
-		CC_CALLBACK_1(MenuScene::menuChangeSceneCallback, this));
-	spriteTestItem->setPosition(Vec2(origin.x + spriteTestItem->getContentSize().width/2, origin.y + visibleSize.height/2));
+    auto  closemenu = Menu::createWithItem(closeItem);
+    closemenu->setPosition(Vec2::ZERO);
+    addChild(closemenu, 0);
+
+    Vector<MenuItem*> menuItemArray;
+    for (size_t i = 0; i < testCases.size(); i++)
+    {
+        auto spriteTest = Label::createWithTTF(std::get<sceneName>(testCases.at(i)), fontFile, fontSize);
+        auto spriteTestItem = MenuItemLabel::create(spriteTest,
+            CC_CALLBACK_1(MenuScene::menuChangeSceneCallback, this, i));
+        menuItemArray.pushBack(spriteTestItem);
+    }
 
     // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, spriteTestItem, NULL);
-    menu->setPosition(Vec2::ZERO);
+    auto menu = Menu::createWithArray(menuItemArray);
+    menu->setPosition(Vec2(origin.x + menu->getContentSize().width / 2, origin.y + visibleSize.height / 2));
+    menu->alignItemsVertically();
     this->addChild(menu, 1);
 
     /////////////////////////////
@@ -68,10 +90,10 @@ bool MenuScene::init()
     // add a label shows "Hello World"
     // create and initialize a label
 
-    auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
+    auto label = Label::createWithTTF("Hello World", fontFile, 24);
     if (label == nullptr)
     {
-        problemLoading("'fonts/Marker Felt.ttf'");
+        problemLoading(fontFile.c_str());
     }
     else
     {
@@ -118,9 +140,11 @@ void MenuScene::menuCloseCallback(Ref* pSender)
 
 }
 
-void MenuScene::menuChangeSceneCallback(Ref* pSender)
+void MenuScene::menuChangeSceneCallback(Ref* pSender, size_t index)
 {
-	auto spriteScene = SpriteTest::createScene();
+    CCAssert(index <= testCases.size()," index error");
+
+    auto scene = std::get<sceneCreatFun>(testCases.at(index))();
 	//TODO 增加切换动画
-	Director::getInstance()->pushScene(spriteScene);
+	Director::getInstance()->pushScene(scene);
 }

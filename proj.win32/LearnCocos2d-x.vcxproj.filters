@@ -19,6 +19,9 @@
     <Filter Include="Classes\Scenes">
       <UniqueIdentifier>{55730ba9-89d5-48b3-b6ea-050e6a6fbed5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Scenes\LostRoutes">
+      <UniqueIdentifier>{047545ff-3183-43fe-ad03-84c4b2f76d90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,6 +47,15 @@
     </ClCompile>
     <ClCompile Include="..\3rdparty\fmt\fmt\printf.cc">
       <Filter>3rdparty\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\LostRoutes\LostRoutesMenu.cpp">
+      <Filter>Classes\Scenes\LostRoutes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\LostRoutesBase.cpp">
+      <Filter>Classes\Scenes\LostRoutes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\LostRoutes\LostRoutesLoading.cpp">
+      <Filter>Classes\Scenes\LostRoutes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +91,18 @@
     </ClInclude>
     <ClInclude Include="..\3rdparty\fmt\fmt\time.h">
       <Filter>3rdparty\fmt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\LostRoutes\LostRoutesMenu.h">
+      <Filter>Classes\Scenes\LostRoutes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\LostRoutes\SystemHeader.h">
+      <Filter>Classes\Scenes\LostRoutes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\LostRoutes\LostRoutesBase.h">
+      <Filter>Classes\Scenes\LostRoutes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\LostRoutes\LostRoutesLoading.h">
+      <Filter>Classes\Scenes\LostRoutes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

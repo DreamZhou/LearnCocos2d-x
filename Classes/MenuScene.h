@@ -14,7 +14,7 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
-	void menuChangeSceneCallback(Ref * pSender);
+    void menuChangeSceneCallback(Ref * pSender, size_t index);
     
 
 };

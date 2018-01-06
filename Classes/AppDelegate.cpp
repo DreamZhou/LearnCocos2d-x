@@ -1,3 +1,4 @@
+#include <vector>
 #include "AppDelegate.h"
 #include "MenuScene.h"
 
@@ -90,6 +91,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     {        
         director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
     }
+
+    std::vector<std::string> searchPaths{"LostRoutes/hd"};
+    FileUtils::getInstance()->setSearchPaths(searchPaths);
 
     register_all_packages();
 
