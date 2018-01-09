@@ -3,7 +3,8 @@
 #include "MenuScene.h"
 #include "Classes/Scenes/SpriteTestScene.h"
 #include "Classes/Scenes/LostRoutes/LostRoutesLoading.h"
-
+#include "3rdparty/fmt/fmt/format.h"
+#include "3rdparty/fmt/fmt/printf.h"
 USING_NS_CC;
 
 std::vector<std::tuple<std::string, std::function<cocos2d::Scene*()>>>
@@ -119,6 +120,9 @@ bool MenuScene::init()
         // add the sprite as a child to this layer
         this->addChild(sprite, 0);
     }
+    fmt::printf("hello world!\n");
+    printf("Hello World!\n");
+    cocos2d::log("Hello World");
     return true;
 }
 
