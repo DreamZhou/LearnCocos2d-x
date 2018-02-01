@@ -149,6 +149,6 @@ void MenuScene::menuChangeSceneCallback(Ref* pSender, size_t index)
     CCAssert(index <= testCases.size()," index error");
 
     auto scene = std::get<sceneCreatFun>(testCases.at(index))();
-	//TODO Ôö¼ÓÇÐ»»¶¯»­
+	//TODO å¢žåŠ åˆ‡æ¢åŠ¨ç”»
 	Director::getInstance()->pushScene(scene);
 }

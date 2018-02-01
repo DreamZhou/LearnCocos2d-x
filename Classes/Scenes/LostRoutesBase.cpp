@@ -21,16 +21,16 @@ bool LostRoutesBase::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    //±³¾°Í¼
+    //èƒŒæ™¯å›¾
     auto bg = TMXTiledMap::create("map/red_bg.tmx");
     addChild(bg);
     
-    //ÑÛ¾¦¾«Áé
+    //çœ¼ç›ç²¾çµ
     auto glassesSprite = Sprite::createWithSpriteFrameName("setting.glasses.png");
     glassesSprite->setPosition(Vec2(visibleSize.width - glassesSprite->getContentSize().width / 2, 160));
     addChild(glassesSprite);
     
-    //OK²Ëµ¥
+    //OKèœå•
     auto okNormal = Sprite::createWithSpriteFrameName("setting.button.ok.png");
     auto okSelected = Sprite::createWithSpriteFrameName("setting.button.ok-on.png");
 
@@ -40,7 +40,7 @@ bool LostRoutesBase::init()
     mu->setPosition(Vec2(visibleSize.width - mu->getContentSize().width / 2 + 60, 60));
     addChild(mu);
 
-
+	return true;
 }
 
 void LostRoutesBase::menuBackCallBack(Ref* pSender) 
