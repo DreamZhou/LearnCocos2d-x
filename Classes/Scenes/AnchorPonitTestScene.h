@@ -1,18 +1,17 @@
 #ifndef __ANCHORPONITTEST_SCENE_H__
 #define __ANCHORPONITTEST_SCENE_H__
 
-#include "cocos2d.h"
+#include "Base/BaseScene.h"
 
-class AnchorPonitTestScene : public cocos2d::Layer
+class AnchorPonitTestScene : public BaseScene
 {
 public:
     static cocos2d::Scene* createScene ();
 
-    virtual bool init ();
+    virtual bool init () override;
 
     void update(float dt) override;
 
-    void menuCloseCallback(Ref * pSender);
 
     void anchorPositionCallback(cocos2d::Ref * pSender, const cocos2d::Vec2 & position);
 

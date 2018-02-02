@@ -1,47 +1,22 @@
 #include "AnchorPonitTestScene.h"
-#include "Utility/playAnimation.h"
+//#include "Utility/playAnimation.h"
 using namespace cocos2d;
 cocos2d::Scene * AnchorPonitTestScene::createScene ()
 {
-    auto scene = Scene::create ();
 
-    // 'layer' is an autorelease object
-    auto layer = AnchorPonitTestScene::create();
-
-    // add layer as a child to scene
-    scene->addChild (layer);
-
-    // return the scene
-    return scene;
+    return AnchorPonitTestScene::create();
 }
 
 bool AnchorPonitTestScene::init ()
 {
-    if (!Layer::init ())
+    if (!BaseScene::init ())
     {
         return false;
     }
     Size visibleSize = Director::getInstance ()->getVisibleSize ();
     Vec2 origin = Director::getInstance ()->getVisibleOrigin ();
 
-    //±³¾°
-    Sprite * bg = Sprite::create ("bg.png");
     Vec2 VisibleMiddle(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
-    bg->setPosition (VisibleMiddle);
-    addChild (bg, -1);
-
-    //¹Ø±Õ°´Å¥
-    // add a "close" icon to exit the progress. it's an autorelease object
-    auto closeItem = MenuItemImage::create (
-        "CloseNormal.png",
-        "CloseSelected.png",
-        CC_CALLBACK_1 (AnchorPonitTestScene::menuCloseCallback, this));
-
-    closeItem->setPosition (Vec2 (origin.x + visibleSize.width - closeItem->getContentSize ().width / 2,
-        origin.y + closeItem->getContentSize ().height / 2));
-    auto menu = Menu::create(closeItem, NULL);
-    menu->setPosition(Vec2::ZERO);
-    this->addChild(menu, 1);
 
     helloWorld = Sprite::create("HelloWorld.png");
     helloWorld->setPosition(VisibleMiddle);
@@ -112,10 +87,7 @@ void AnchorPonitTestScene::update(float dt)
     //}
     //progress1->setPercentage(percent);
 }
-void AnchorPonitTestScene::menuCloseCallback (cocos2d::Ref* )
-{
-    Director::getInstance()->popScene();
-}
+
 void AnchorPonitTestScene::anchorPositionCallback(cocos2d::Ref * pSender, const cocos2d::Vec2 &  position)
 {
     helloWorld->setAnchorPoint(position);
@@ -134,5 +106,5 @@ void AnchorPonitTestScene::setRotationCallback(cocos2d::Ref * pSender)
 }
 void AnchorPonitTestScene::playFanQieCallback(cocos2d::Ref* pSender) 
 {
-    playAnimation::playAnimationFanqie(this, Vec2(20, 20), Vec2(500, 500));
+   // playAnimation::playAnimationFanqie(this, Vec2(20, 20), Vec2(500, 500));
 }

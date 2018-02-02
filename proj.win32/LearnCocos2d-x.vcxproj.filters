@@ -22,6 +22,9 @@
     <Filter Include="Classes\Scenes\LostRoutes">
       <UniqueIdentifier>{047545ff-3183-43fe-ad03-84c4b2f76d90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Base">
+      <UniqueIdentifier>{edb4be71-881f-42a8-bcc4-84f1abbdc9a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -56,6 +59,15 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Scenes\LostRoutes\LostRoutesLoading.cpp">
       <Filter>Classes\Scenes\LostRoutes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\AnchorPonitTestScene.cpp">
+      <Filter>Classes\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Base\BaseScene.cpp">
+      <Filter>Classes\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\ClippingNodeScene.cpp">
+      <Filter>Classes\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +115,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Scenes\LostRoutes\LostRoutesLoading.h">
       <Filter>Classes\Scenes\LostRoutes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\AnchorPonitTestScene.h">
+      <Filter>Classes\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Base\BaseScene.h">
+      <Filter>Classes\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\ClippingNodeScene.h">
+      <Filter>Classes\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

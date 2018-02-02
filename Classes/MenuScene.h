@@ -1,19 +1,19 @@
 #ifndef __MENU_SCENE_H__
 #define __MENU_SCENE_H__
 
-#include "cocos2d.h"
+#include "Base/BaseScene.h"
 
-class MenuScene : public cocos2d::Scene
+class MenuScene : public BaseScene
 {
 public:
     static cocos2d::Scene* createScene();
     // implement the "static create()" method manually
     CREATE_FUNC(MenuScene);
 
-    virtual bool init();
+    virtual bool init() override;
     
     // a selector callback
-    void menuCloseCallback(cocos2d::Ref* pSender);
+    void menuBackCallback(cocos2d::Ref* pSender) override;
     void menuChangeSceneCallback(Ref * pSender, size_t index);
     
 
